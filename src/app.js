@@ -1,19 +1,11 @@
 // src/app.js
 const express = require('express')
 const app = express()
-const ShippingController = require('../src/controllers/shipping-controller')
 
-app.get('/*shipping', (request, response) => {
-  let ctrl = new ShippingController()
 
-  ctrl
-    .getItemShipping({id: request.query.itemId, type: request.query.type})
-    .then(amount => {
-      response.send({ itemId: request.query.itemId, priceUSD: amount })
-    })
-    .catch(error => {
-      response.status(500).send({ error: error.message })
-    })
+app.get('/products/:productId', (request, response) => {
+  response.send({ weightLB: 50 })
+ 
 
 })
 
