@@ -1,15 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: shipping-service-ingress
+  name: product-service-ingress
   labels:
-    app: shipping-service
+    app: product-service
 spec:
   rules:
-  - host: shipping-service-shipping-service-XX.cnbopenshift-4541c909052590f055286494a1af3e6a-0001.eu-de.containers.appdomain.cloud
+  - host: product-service-product-service-XX.cnbopenshift-4541c909052590f055286494a1af3e6a-0001.eu-de.containers.appdomain.cloud
     http:
       paths:
       - path: /
         backend:
-          serviceName: shipping-service-svc
+          serviceName: product-service-svc
           servicePort: app-port
